@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des ventes</title>
+</head>
+<body>
+    <h1>Liste des ventes</h1>
+    {{#annonces}}
+    <br>
+    <a href="/view/{{_id}}"><h5>Titre : {{titre}}</h5></a>
+    <h5>Description : {{description}}</h5>
+    <h5>Prix : {{prix}} €</h5>
+    <h5>Surface : {{surface}} m2</h5>
+   
+   
+    
+    
+    <a href="/update/{{_id}}"><button>Modifier</button></a>
+
+    <form action="/delete/{{_id}}" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit">Supprimer</button>
+    </form>
+    <br>
+    {{/annonces}}
+</body>
+</html>
